@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(255, 198, 198);
+    color: rgb(0, 0, 0);
+  }
+p {
+    outline: #ffffff solid 1px;
+    margin: auto;  
+    padding: 5px;
+    text-align: center;
+    font-family: "Lucida Console", "Courier New",
+  }
+h1 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  letter-spacing: 3px;
+  text-shadow: 3px 2px rgb(255, 255, 255);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+audio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; 
+  display: block;
+}
+div.centerplayer div.mejs-container {
+  margin-right: auto;
+  margin-left: auto;
+  }

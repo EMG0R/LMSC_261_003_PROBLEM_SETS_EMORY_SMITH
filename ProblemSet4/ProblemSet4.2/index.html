@@ -1,0 +1,110 @@
+<!-- BASIC STUFF -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            PROBLEM SET 4.2
+        </title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <h1>
+        PROBLEM SET 4.2
+    </h1>
+
+
+<!-- INTRO -->
+    <p><body>
+        Hello, my name is Emory Smith. I like sci-fi, jazz, modular synthesis, 
+        coding and combining sound and technology in new ways. 
+    </body></p>
+    <body>
+        <p><a href="song.html">CLICK TO SEE A SONG I'M WORKING ON</a></p>
+        <p><a href="image.html">CLICK TO SEE MY ALBUM COVER</a></p>
+        
+
+ <!-- CHANGE BACKGROUND COLOR -->
+        <label for="colorSelector">Select a background color:</label>
+        <select id="colorSelector" onchange="changeBackgroundColor()">
+            <option value="white">White</option>
+            <option value="lightblue">Light Blue</option>
+            <option value="lightgreen">Light Green</option>
+            <option value="lightcoral">Light Coral</option>
+        </select>   
+        <script>
+            function changeBackgroundColor() {
+                var colorSelector = document.getElementById("colorSelector");
+                var selectedColor = colorSelector.options[colorSelector.selectedIndex].value;
+                document.body.style.backgroundColor = selectedColor;
+            }
+        </script>
+
+
+<!-- QUOTE BUTTON -->
+    <p><button id="quote" onclick="showQuote()">click here !!</button></p>
+    <p id="quoteText">"The true sign of intelligence is not knowlege but imagination. - Einstein"</p>
+    <script>
+        function showQuote() {
+            var quoteText = document.getElementById("quoteText");
+            var button = document.getElementById("quote");
+
+            if (quoteText.style.display === "none") {
+                quoteText.style.display = "block";
+                button.innerHTML = "hide quote";
+            } else {
+                quoteText.style.display = "none";
+                button.innerHTML = "show quote";
+            }
+        }
+    </script>
+
+
+<!-- COUNTER -->
+<label for="timerInput">Enter a number</label>
+<input type="number" id="timerInput" placeholder="here">
+<button id="counterButton" onclick="startTimer()">Start Countdown</button>
+<p id="countdown"></p>
+<script>
+    function startTimer() {
+        var inputElement = document.getElementById("timerInput");
+        var countdownElement = document.getElementById("countdown");
+        var seconds = parseInt(inputElement.value);
+        if (isNaN(seconds) || seconds <= 0) {
+            return;
+        }
+        inputElement.disabled = true;
+        document.querySelector("button").disabled = true;
+        var timer = setInterval(function () {
+            seconds--;
+            countdownElement.innerHTML = seconds;
+            if (seconds <= 0) {
+                clearInterval(timer);
+                countdownElement.innerHTML = "";
+                inputElement.value = "";
+                inputElement.disabled = false;
+                document.querySelector("button").disabled = false;
+            }
+        }, 1000);
+    }
+</script>
+
+
+<!-- RANDOM IMAGE -->
+    <img id="randomImage">
+    <script>
+        var images = [
+            'dune1.jpg',
+            'dune2.jpg',
+            'dune3.jpg'
+        ];
+        function getRandomIndex() {
+            return Math.floor(Math.random() * images.length);
+        }
+        var randomIndex = getRandomIndex();
+        var randomImageUrl = images[randomIndex];
+        document.getElementById('randomImage').src = randomImageUrl;
+    </script>
+
+</body>
+</html>
+
+<!-- :) -->
