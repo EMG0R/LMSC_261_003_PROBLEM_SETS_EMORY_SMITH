@@ -1,0 +1,63 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+#rnbo-root {
+    height: 100vh;
+    width: 100vw;
+}
+#background {
+    position: absolute;
+    z-index: -1;
+}
+
+h2, em {
+    width: 100%;
+    color: #ffffff;
+}
+
+#rnbo-root {
+    margin: auto;
+    max-width: 540px;
+    color: #ffffff;
+}
+
+#rnbo-clickable-keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    color: #ffffff;
+}
+
+#rnbo-clickable-keyboard > div {
+    margin: 2px;
+    border: solid black 1px;
+    min-height: 50px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+#rnbo-clickable-keyboard > div.clicked {
+    background: #222222;
+    color: #dddddd;
+}
+
+#rnbo-parameter-sliders {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+#rnbo-parameter-sliders > div {
+    display: flex;
+    color: #ffffff;
+}
+
+#rnbo-parameter-sliders > div > input:first-of-type {
+    flex-grow: 1;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.7); /* Set the background color to black with some transparency */
+}
